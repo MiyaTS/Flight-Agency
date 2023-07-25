@@ -9,12 +9,12 @@
 
 :root{
     --PrimaryColor: hsl(225, 58%, 48%);
-    --SecondaryColor: Ihsl(180, 17%, 95%);
+    --SecondaryColor: hsl(180, 17%, 95%);
     --colorOne: hsl(15, 74%, 70%);
     --colorTwo: hsl(28, 100%, 82%);
     --HoverColor: hsl(225, 56%, 59%);
-    --whiteColor: Ihsl(0, 0%, 100%);
-    --blackColor: Ohsl(0, 0%, 12%);
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(0, 0%, 12%);
     --textColor: hsl(240, 1%, 48%);
     --borderColor: hsl(0, 0%, 83%);
     --whiteColorDeam: hsl(0, 0%, 93%);
@@ -52,10 +52,6 @@ li {
     cursor: pointer;
 }
 
-.none{
-    display: none;
-}
-
 .flex{
     display: flex;
     align-items: center;
@@ -66,9 +62,14 @@ li {
     align-items: center;
 }
 
+.none{
+    display: none;
+}
+
+
 .btn{
     padding: .7rem 1.5rem;
-    background: var(--PrimaryColor);
+    background-color: var(--PrimaryColor);
     outline: none;
     border: none;
     border-radius: 3em;
@@ -109,4 +110,102 @@ h2{
     font-size: 25px;
     padding: 1re 0;
     color: var(--blackColor);
+}
+
+//navbar styling
+
+.navBar{
+    position: fixed;
+    flex-direction: column;
+    width: 100%;
+    z-index: 1000;
+
+    .navBarOne, .navBarTwo{
+        justify-content: space-between;
+        padding: 1rem;
+        width: 100%;
+    }
+    .navBarOne{
+        background: var(--SecondaryColor);
+        .icon:hover{
+            color: var(--PrimaryColor);
+        }
+        .atb{
+            gap:1rem;
+            span{
+                color: var(--blackColor);
+                font-size: 13px;
+                cursor: pointer;
+                &:hover{
+                    color: var(--PrimaryColor);
+                    font-size: 700;
+                }
+            }
+        }
+    }
+    .navBarTwo{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        top: 3em;
+        padding: 1.5rem 1rem;
+        position: fixed;
+        transition: .3s ease-in-out;
+        .logoDiv{
+            .Logo{
+                font-size: 30px;
+            }
+        }
+        @media screen and (max-width: 768px){
+            .navBarMenu{
+                position: absolute;
+                background:var(--SecondaryColor);
+                padding: 1.5rem;
+                border-radius:10px;
+                top: 5rem;
+                right: -50%;
+                width: 80%;
+                transform: translate(50%);
+                z-index: 2000;
+                box-shadow:var(--boxShadow);
+                border:3px solid var(--whiteColor);
+                transition: .4s ease-in-out;
+                .menu{
+                    flex-direction: column;
+                    gap: .5rem;
+                    text-align: center;
+                    .listItem{
+                        padding: .5em 0;
+                        cursor: pointer;
+                        color: var(--blackColor);
+                        &:hover{
+                            color: var(--PrimaryColor);
+                            font-weight: 700;
+                        }
+                    }
+                }
+                .btnOne{
+                    display: block;
+                    justify-content: center;
+                    margin: auto;
+                    margin-top: 1rem;
+                }
+    
+            }
+            .btnTwo{
+                display: none;
+            }
+            .toggleIcon{
+                .icon{
+                    font-size: 30px;
+                    color: var(--blackColor);
+
+                }
+            }
+            .showNavBar{
+                right: 50%;
+                transition: .5s ease-in-out;
+            }
+        }
+    }
 }
