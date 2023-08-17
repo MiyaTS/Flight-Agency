@@ -14,8 +14,8 @@ const App = () => {
     <div>
       <Navbar />
       <Home />
-      {/* 
       <Search />
+      {/* 
       <Support />
       <Info />
       <Lounge />
