@@ -7,10 +7,10 @@ import { AiOutlineGlobal } from 'react-icons/ai'
 import { CgMenuGridO } from 'react-icons/cg'
 import { IoAirplaneSharp } from 'react-icons/io5'
 
-//import img
-
 
 const Navbar = () => {
+
+  //remove the navbar in the mobile view
 
   const [active, setActive] = useState('navBarMenu')
   const showNavBar = () => {
@@ -19,6 +19,17 @@ const Navbar = () => {
   const removeNavBar = () => {
     setActive('navBarMenu')
   }
+
+  //add a background color to the second navbar
+  const [noBg, addBg] = useState('navBarTwo')
+  const addBgColor = () => {
+    if(window.scrollY >= 10){
+      addBg('navBarTwo navbar_With_Bg')
+    }else{
+      addBg('navBarTwo')
+    }
+  }
+  window.addEventListener('scroll', addBgColor)
 
   return (
     <div className='navBar flex'>
@@ -39,7 +50,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="navBarTwo flex">
+      <div className={noBg}>
         <div className="logoDiv">
          <IoAirplaneSharp className='Logo'/>
         </div>

@@ -226,6 +226,12 @@ h2 {
     transition: 0.5s ease-in-out;
   }
 }
+.navBar .navbar_With_Bg {
+  background: var(--SecondaryColor);
+  padding: 0.5rem 2rem;
+  -webkit-box-shadow: var(--boxShadow);
+          box-shadow: var(--boxShadow);
+}
 
 .home {
   padding-top: 10rem;

@@ -208,6 +208,12 @@ h2{
             }
         }
     }
+
+    .navbar_With_Bg{
+        background: var(--SecondaryColor);
+        padding: .5rem 2rem;
+        box-shadow: var(--boxShadow);
+    }
 }
 
 // Home styling
