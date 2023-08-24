@@ -60,7 +60,7 @@ const Search = () => {
           {/* singleInput*/}
           <div className="singleInput flex">
             <div className="iconDiv">
-              <RiAccountPinCircleLine className='icon'/>
+              <RxCalendar className='icon'/>
             </div>
             <div className="texts">
               <h4>Check Out</h4>
